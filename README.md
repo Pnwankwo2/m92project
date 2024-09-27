@@ -18,21 +18,30 @@
 
 # EXAMINATION OF THE DATASET 
 
+# Generally
+    # The dataset is non seasonally adjusted.
+    # The data frequency is daily from 11/4/1996 to 21/9/2024 for the U.S Dollar Nominal Effective Exchange Rate measured  
+    # against the geometric weighted average of 64 economies based on bilateral trade policies.
+    # Year 2020 is the base year with an index of 100 against which all other years are measured against.
+
 # What columns are there? 
-    # Columns include the daily time period, exchange rate nominal value.
-    # The Unit column has a an index, 2020 = 100 as the base year.
-    # There is a column for the value of the basket of currencies for 64 
-    # economies against which the US Dollar is measured. 
+    # Frequency, EER Type, EER Basket (broad), Reference Area (U.S.),Time_Period (Daily), Observed Value # OBS # of the EER, OBS_STATUS:Status, OBS_PRE_BREAK:Pre-break value
 
 # What unique values do the columns contain?
+    # 
 
 # Are any columns especially suitable for grouping?
+    # The Time Period column is is suitable for grouping for determining the mean over the 60 day 
+    # holiday season and the 30 days prior and after the U.S. Presidential Election.
 
-# Are there any interesting questions we have based on the columns available?
+# Are there any interesting questions based on the available columns? 
+
+
 
 # CLEANING THE DATASET 
-    # Null values will be dropped, for e.g. for public holidays & weekends. 
+    # Null values will be dropped, for e.g. Not a Number (NaN) is to be removed for public holidays & weekends 
     # Static columns will be dropped.
+    The Unit_Measure "882" column is not needed.
 
 # PERFORMING EXPLORATORY DATA ANALYSIS (EDA)
     # We will create a Prophet model to understand how is the data modelled.
